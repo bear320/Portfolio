@@ -1,0 +1,19 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+// Font and Typography
+$body-font: "Poppins", sans-serif;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1rem;
+$normal-font-size: 0.938rem;
+$small-font-size: 0.813rem;
+$smaller-font-size: 0.75rem;
+
+// RWD
+@media all and (min-width: 968px) {
+    $h2-font-size: 1.5rem;
+    $h3-font-size: 1.25rem;
+    $normal-font-size: 1rem;
+    $small-font-size: 0.875rem;
+    $smaller-font-size: 0.813rem;
+}

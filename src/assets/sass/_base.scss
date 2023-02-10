@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    background-color: $body-color;
+    color: $text-color;
+    transition: 0.3s; // For animation dark mode
+}
+
+h1,
+h2,
+h3 {
+    color: $title-color;
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
