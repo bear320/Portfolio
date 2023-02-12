@@ -6,19 +6,19 @@ const routes = [
         path: "/",
         name: "about",
         component: () => import("@/views/AboutMe.vue"),
-        meta: { title: "About Me｜Oliver's Profolio" },
+        meta: { title: "About Me｜Oliver's Portfolio" },
     },
     {
         path: "/projects",
         name: "projects",
         component: () => import("@/views/Projects.vue"),
-        meta: { title: "Projects｜Oliver's Profolio" },
+        meta: { title: "Projects｜Oliver's Portfolio" },
     },
     {
         path: "/skills",
         name: "skills",
         component: () => import("@/views/Skills.vue"),
-        meta: { title: "Skills｜Oliver's Profolio" },
+        meta: { title: "Skills｜Oliver's Portfolio" },
     },
 ];
 

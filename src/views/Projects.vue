@@ -1,14 +1,18 @@
 <template>
-    <h1>{{ msg }}</h1>
+    <section class="views">
+        <div class="project-wrap grid">
+            <article class="project">
+                <img src="" alt="" class="project-img" />
+            </article>
+        </div>
+    </section>
 </template>
 
 <script>
 export default {
     components: {},
     data() {
-        return {
-            msg: "This is a projects page.",
-        };
+        return {};
     },
     computed: {},
     methods: {},
