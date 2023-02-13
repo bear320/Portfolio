@@ -66,7 +66,7 @@
     <main class="main">
         <section class="filter-wrap container">
             <div class="content">
-                <router-link to="/">關於我</router-link>
+                <router-link to="/">簡介</router-link>
                 <router-link to="/projects">作品集</router-link>
                 <router-link to="/skills">技能</router-link>
             </div>

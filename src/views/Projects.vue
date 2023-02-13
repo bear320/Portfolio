@@ -3,8 +3,20 @@
         <div class="project-wrap grid">
             <article class="project" v-for="project in projects" :key="project.id">
                 <div class="project-img">
-                    <img :src="project.cover" alt="專案封面" class="cover" />
-                    <div class="mask"></div>
+                    <img
+                        :src="project.cover"
+                        alt="專案封面"
+                        class="cover"
+                        :id="project.id"
+                        :data-hover="project.thumbnail"
+                    />
+                    <div
+                        class="mask"
+                        @mouseover.prevent="inImg(project.id)"
+                        @mouseout.prevent="outImg(project.id)"
+                        @touchstart.prevent="inImg(project.id)"
+                        @touchend.prevent="outImg(project.id)"
+                    ></div>
                 </div>
                 <div class="project-content">
                     <span class="tag">{{ project.tag }}</span>
@@ -24,34 +36,50 @@
 </template>
 )
 <script>
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/firebase";
+
 export default {
     components: {},
     data() {
         return {
-            projects: [
-                {
-                    id: 1,
-                    tag: "web",
-                    title: "Gercery",
-                    cover: "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
-                    hover: "https://fakeimg.pl/350x200/?text=HOVER",
-                    link: "https://bear320.github.io/GERCERY/",
-                    github: "https://github.com/bear320/GERCERY",
-                },
-                {
-                    id: 1,
-                    tag: "web",
-                    title: "KOALA+",
-                    cover: "https://fakeimg.pl/350x200/?text=COVER",
-                    hover: "https://fakeimg.pl/350x200/?text=HOVER",
-                    link: "https://tibamef2e.com/cgd103/g1/",
-                    github: "https://github.com/bear320/KOALA_PLUS",
-                },
-            ],
+            projects: [],
+            temp: "",
         };
     },
     computed: {},
-    methods: {},
+    methods: {
+        async getProjects() {
+            const querySnapshot = await getDocs(collection(db, "projects"));
+            let fbProjects = [];
+            querySnapshot.forEach((doc) => {
+                // console.log(doc.id, " => ", doc.data());
+                const project = {
+                    id: doc.id,
+                    tag: doc.data().tag,
+                    title: doc.data().title,
+                    cover: doc.data().cover,
+                    thumbnail: doc.data().thumbnail,
+                    link: doc.data().link,
+                    github: doc.data().github,
+                };
+                fbProjects.push(project);
+            });
+            this.projects = fbProjects;
+        },
+        inImg(ID) {
+            const show = document.getElementById(ID);
+            this.temp = show.src;
+            show.src = show.dataset.hover;
+        },
+        outImg(ID) {
+            const show = document.getElementById(ID);
+            show.src = this.temp;
+        },
+    },
+    mounted() {
+        this.getProjects();
+    },
 };
 </script>
 
@@ -78,7 +106,7 @@ export default {
                 overflow: hidden;
 
                 &:hover .mask {
-                    bottom: -100%;
+                    opacity: 0;
                 }
 
                 .cover {
@@ -92,13 +120,14 @@ export default {
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    bottom: 0;
+                    top: 0;
                     left: 0;
                     background: linear-gradient(
                         180deg,
                         hsla(var(--hue), 24%, 40%, 0.3) 0%,
                         hsla(var(--hue), 24%, 4%, 0.7) 95%
                     );
+                    opacity: 1;
                     transition: all 0.3s 0s ease-out;
                 }
             }
