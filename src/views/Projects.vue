@@ -53,7 +53,6 @@ export default {
             const querySnapshot = await getDocs(collection(db, "projects"));
             let fbProjects = [];
             querySnapshot.forEach((doc) => {
-                // console.log(doc.id, " => ", doc.data());
                 const project = {
                     id: doc.id,
                     tag: doc.data().tag,
@@ -77,7 +76,7 @@ export default {
             show.src = this.temp;
         },
     },
-    mounted() {
+    created() {
         this.getProjects();
     },
 };
@@ -125,7 +124,7 @@ export default {
                     background: linear-gradient(
                         180deg,
                         hsla(var(--hue), 24%, 40%, 0.3) 0%,
-                        hsla(var(--hue), 24%, 4%, 0.7) 95%
+                        hsla(var(--hue), 24%, 4%, 0.6) 95%
                     );
                     opacity: 1;
                     transition: all 0.3s 0s ease-out;
