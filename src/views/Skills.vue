@@ -1,17 +1,58 @@
 <template>
     <section class="views">
         <div class="skills grid">
-            <img
-                :src="project.img"
-                v-for="project in projects"
-                :key="project.id"
-                :id="project.id"
-                :data-hover="project.hover"
-                @mouseover.prevent="inImg(project.id)"
-                @mouseout.prevent="outImg(project.id)"
-                @touchstart.prevent="inImg(project.id)"
-                @touchend.prevent="outImg(project.id)"
-            />
+            <!-- Block 1 -->
+            <div class="skill-block">
+                <h3 class="title">使用者介面設計</h3>
+                <div class="skill-wrap">
+                    <div class="skill-data" v-for="skill in UIUX" :key="skill.item">
+                        <i class="ri-checkbox-circle-line"></i>
+                        <div>
+                            <h3 class="skill-name">{{ skill.item }}</h3>
+                            <span class="skill-level">{{ skill.level }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Block 2 -->
+            <div class="skill-block">
+                <h3 class="title">前端開發</h3>
+                <div class="skill-wrap">
+                    <div class="skill-data" v-for="skill in Frontend" :key="skill.item">
+                        <i class="ri-checkbox-circle-line"></i>
+                        <div>
+                            <h3 class="skill-name">{{ skill.item }}</h3>
+                            <span class="skill-level">{{ skill.level }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Block 3 -->
+            <div class="skill-block">
+                <h3 class="title">後端開發</h3>
+                <div class="skill-wrap">
+                    <div class="skill-data" v-for="skill in Backend" :key="skill.item">
+                        <i class="ri-checkbox-circle-line"></i>
+                        <div>
+                            <h3 class="skill-name">{{ skill.item }}</h3>
+                            <span class="skill-level">{{ skill.level }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Block 4 -->
+            <div class="skill-block">
+                <h3 class="title">語言</h3>
+                <div class="skill-wrap">
+                    <div class="skill-data" v-for="skill in Language" :key="skill.item">
+                        <i class="ri-checkbox-circle-line"></i>
+                        <div>
+                            <h3 class="skill-name">{{ skill.item }}</h3>
+                            <span class="skill-level">{{ skill.level }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -21,46 +62,176 @@ export default {
     components: {},
     data() {
         return {
-            projects: [
+            UIUX: [
                 {
-                    id: "p1",
-                    img: "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
-                    hover: "https://media1.giphy.com/media/kM4NdYwraoK1hksQSA/200w.gif?cid=6c09b952llm9rq1ijioxbvvwtje3pdypw5ao6lbdx3ud2qk4&rid=200w.gif&ct=g",
+                    item: "UI/UX",
+                    level: "進階",
                 },
                 {
-                    id: "p2",
-                    img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/nature-quotes-landscape-1648265299.jpg?crop=0.676xw:1.00xh;0.148xw,0&resize=640:*",
-                    hover: "https://i.gifer.com/origin/b0/b05bfec1ff5b48cc0529d6a035b8d194.gif",
+                    item: "Wireframe",
+                    level: "進階",
+                },
+                {
+                    item: "Mockup",
+                    level: "進階",
+                },
+                {
+                    item: "Figma",
+                    level: "進階",
+                },
+                {
+                    item: "Photoshop",
+                    level: "入門",
+                },
+                {
+                    item: "Illustrator",
+                    level: "入門",
+                },
+                {
+                    item: "InDesign",
+                    level: "入門",
                 },
             ],
-            temp: "",
+            Frontend: [
+                {
+                    item: "HTML5",
+                    level: "精熟",
+                },
+                {
+                    item: "CSS3",
+                    level: "精熟",
+                },
+                {
+                    item: "SASS",
+                    level: "進階",
+                },
+                {
+                    item: "JavaScript",
+                    level: "進階",
+                },
+                {
+                    item: "jQuery",
+                    level: "進階",
+                },
+                {
+                    item: "Vue JS",
+                    level: "進階",
+                },
+                {
+                    item: "Bootstrap",
+                    level: "進階",
+                },
+                {
+                    item: "AJAX",
+                    level: "進階",
+                },
+                {
+                    item: "Web APIs",
+                    level: "進階",
+                },
+                {
+                    item: "Git",
+                    level: "進階",
+                },
+            ],
+            Backend: [
+                {
+                    item: "PHP",
+                    level: "入門",
+                },
+                {
+                    item: "MySQL",
+                    level: "入門",
+                },
+                {
+                    item: "RDB",
+                    level: "入門",
+                },
+                {
+                    item: "Firebase",
+                    level: "入門",
+                },
+            ],
+            Language: [
+                {
+                    item: "中文",
+                    level: "精熟",
+                },
+                {
+                    item: "英文",
+                    level: "進階",
+                },
+                {
+                    item: "德文",
+                    level: "進階",
+                },
+                {
+                    item: "泰文",
+                    level: "入門",
+                },
+            ],
         };
     },
     computed: {},
-    methods: {
-        inImg(idThis) {
-            const show = document.getElementById(idThis);
-            this.temp = show.src;
-            show.src = show.dataset.hover;
-        },
-        outImg(idThis) {
-            const show = document.getElementById(idThis);
-            show.src = this.temp;
-        },
-    },
+    methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
-img {
-    width: 300px;
-    height: 300px;
-}
-// img:hover {
-//     content: url("https://media1.giphy.com/media/kM4NdYwraoK1hksQSA/200w.gif?cid=6c09b952llm9rq1ijioxbvvwtje3pdypw5ao6lbdx3ud2qk4&rid=200w.gif&ct=g");
-// }
+.views {
+    .skills {
+        justify-content: center;
+        row-gap: 3.5rem;
 
-// img:active {
-//     content: url("@/assets/images/project4.jpg");
-// }
+        @include min(776) {
+            grid-template-columns: repeat(2, 332px);
+            column-gap: 3rem;
+        }
+
+        .skill-block {
+            .title {
+                font-size: var(--h3-font-size);
+                text-align: center;
+                margin-bottom: 1.5rem;
+
+                @include min(992) {
+                    font-size: var(--normal-font-size);
+                    margin-bottom: 2.5rem;
+                }
+            }
+
+            .skill-wrap {
+                display: grid;
+                grid-template-columns: minmax(105px, 110px) minmax(105px, 110px);
+                justify-content: center;
+                column-gap: 3rem;
+                row-gap: 1rem;
+
+                @include max(320) {
+                    column-gap: 1rem;
+                }
+
+                .skill-data {
+                    display: flex;
+                    column-gap: 0.5rem;
+
+                    i {
+                        font-size: 1rem;
+                        color: var(--first-color);
+                    }
+
+                    .skill-name {
+                        font-size: var(--normal-font-size);
+                        font-weight: 500;
+                        line-height: 18px;
+                    }
+
+                    .skill-level {
+                        font-size: var(--smaller-font-size);
+                    }
+                }
+            }
+        }
+    }
+}
 </style>

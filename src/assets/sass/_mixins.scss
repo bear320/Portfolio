@@ -1,0 +1,11 @@
+@mixin max($bp) {
+    @media all and (max-width: $bp + px) {
+        @content;
+    }
+}
+
+@mixin min($bp) {
+    @media all and (min-width: $bp + px) {
+        @content;
+    }
+}

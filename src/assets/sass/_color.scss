@@ -5,15 +5,19 @@
 // Purple: hsl(250, 66%, 75%)
 // Pink: hsl(356, 66%, 75%)
 // Teal: hsl(174, 63%, 62%)
+// Atomic tangerine: hsl(15, 76%, 74%)
+// Cambridge blue: hsl(153, 25%, 61%)
 
-$hue: 207;
-$sat: 90%;
-$lig: 61%;
-$first-color: hsl($hue, $sat, $lig);
-$first-color-alt: hsl($hue, $sat, 57%);
-$title-color: hsl($hue, 12%, 15%);
-$text-color: hsl($hue, 12%, 45%);
-$text-color-light: hsl($hue, 8%, 75%);
-$text-color-lighten: hsl($hue, 8%, 92%);
-$body-color: hsl($hue, 100%, 99%);
-$container-color: #fff;
+:root {
+    --hue: 153;
+    --sat: 25%;
+    --lig: 61%;
+    --first-color: hsl(var(--hue), var(--sat), var(--lig));
+    --first-color-alt: hsl(var(--hue), var(--sat), 57%); // -4%
+    --title-color: hsl(var(--hue), 12%, 15%);
+    --text-color: hsl(var(--hue), 12%, 45%);
+    --text-color-light: hsl(var(--hue), 8%, 75%);
+    --text-color-lighten: hsl(var(--hue), 8%, 92%);
+    --body-color: hsl(var(--hue), 100%, 99%);
+    --container-color: #fff;
+}

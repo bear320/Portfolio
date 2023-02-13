@@ -5,17 +5,18 @@
 }
 
 body {
-    font-family: $body-font;
-    font-size: $normal-font-size;
-    background-color: $body-color;
-    color: $text-color;
-    transition: 0.3s; // For animation dark mode
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: 0.3s;
+    transition: 0.3s;
 }
 
 h1,
 h2,
 h3 {
-    color: $title-color;
+    color: var(--title-color);
     font-weight: 600;
 }
 

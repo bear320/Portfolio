@@ -1,3 +1,63 @@
 // THEME
+.change-theme {
+    position: absolute;
+    top: 1.5rem;
+    right: 0;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        color: var(--first-color);
+    }
+
+    @include min(992) {
+        top: 2.5rem;
+        right: 2.5rem;
+    }
+}
 
 // Variables Dark theme
+body.dark-theme {
+    --title-color: hsl(var(--hue), 12%, 95%);
+    --text-color: hsl(var(--hue), 12%, 75%);
+    --body-color: hsl(var(--hue), 40%, 8%);
+    --container-color: hsl(var(--hue), 24%, 12%);
+
+    &::-webkit-scrollbar {
+        background-color: hsl(var(--hue), 8%, 16%);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: hsl(var(--hue), 8%, 24%);
+
+        &:hover {
+            background-color: hsl(var(--hue), 8%, 32%);
+        }
+    }
+
+    .profile {
+        .profile-wrap {
+            .btn-wrap {
+                .small-btn-wrap {
+                    .btn-gray {
+                        background-color: var(--container-color);
+
+                        &:hover {
+                            background-color: hsl(var(--hue), 24%, 16%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        .filter-wrap {
+            .content {
+                background-color: var(--container-color);
+            }
+        }
+    }
+}
