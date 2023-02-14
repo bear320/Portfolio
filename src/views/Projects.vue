@@ -103,9 +103,15 @@ export default {
                 position: relative;
                 border-radius: 1rem;
                 overflow: hidden;
+                // border: 1px solid var(--text-color-light);
+                // border: 1px solid var(--text-color-lighten);
 
                 &:hover .mask {
                     opacity: 0;
+                }
+
+                &:hover {
+                    border: 1px solid var(--text-color-lighten);
                 }
 
                 .cover {
@@ -123,8 +129,8 @@ export default {
                     left: 0;
                     background: linear-gradient(
                         180deg,
-                        hsla(var(--hue), 24%, 40%, 0.3) 0%,
-                        hsla(var(--hue), 24%, 4%, 0.6) 95%
+                        hsla(var(--hue), 24%, 40%, 0.15) 0%,
+                        hsla(var(--hue), 24%, 4%, 0.5) 95%
                     );
                     opacity: 1;
                     transition: all 0.3s 0s ease-out;
