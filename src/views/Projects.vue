@@ -22,10 +22,10 @@
                     <span class="tag">{{ project.tag }}</span>
                     <h3 class="title">{{ project.title }}</h3>
                     <div class="project-link-wrap">
-                        <a :href="project.link" target="blank" class="project-link btn btn-small">
+                        <a :href="project.link" target="_blank" class="project-link btn btn-small">
                             <i class="ri-link"></i>
                         </a>
-                        <a :href="project.github" target="blank" class="project-link btn btn-small">
+                        <a :href="project.github" target="_blank" class="project-link btn btn-small">
                             <i class="ri-code-view"></i>
                         </a>
                     </div>

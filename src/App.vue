@@ -32,17 +32,9 @@
             </div>
 
             <div class="info-wrap grid">
-                <div class="info">
-                    <h3 class="number">2</h3>
-                    <p class="desc">Years of<br />work</p>
-                </div>
-                <div class="info">
-                    <h3 class="number">+2</h3>
-                    <p class="desc">Completed<br />projects</p>
-                </div>
-                <div class="info">
-                    <h3 class="number">96</h3>
-                    <p class="desc">Satisfied<br />customers</p>
+                <div class="info" v-for="item in info" :key="item.desc">
+                    <h3 class="number">{{ item.number }}</h3>
+                    <p class="desc">{{ item.desc }}</p>
                 </div>
             </div>
 
@@ -55,7 +47,7 @@
                     <a href="tel:+886-960779920" class="btn btn-small btn-gray">
                         <i class="ri-phone-line"></i>
                     </a>
-                    <a href="javascript:;" class="btn btn-small btn-gray">
+                    <a href="mailto:aaabear320@gmail.com?subject=測試" target="_blank" class="btn btn-small btn-gray">
                         <i class="ri-mail-line"></i>
                     </a>
                 </div>
@@ -83,7 +75,22 @@
 export default {
     components: {},
     data() {
-        return {};
+        return {
+            info: [
+                {
+                    number: "2Y+",
+                    desc: "工作經驗",
+                },
+                {
+                    number: "2+",
+                    desc: "完成專案",
+                },
+                {
+                    number: "25Y",
+                    desc: "目前年紀",
+                },
+            ],
+        };
     },
     computed: {},
     methods: {

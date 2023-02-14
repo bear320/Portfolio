@@ -1,7 +1,6 @@
 <template>
     <section class="views">
         <div class="skills grid">
-            <!-- Block 1 -->
             <div class="skill-block">
                 <h3 class="title">使用者介面設計</h3>
                 <div class="skill-wrap">
@@ -14,7 +13,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Block 2 -->
             <div class="skill-block">
                 <h3 class="title">前端開發</h3>
                 <div class="skill-wrap">
@@ -27,7 +25,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Block 3 -->
             <div class="skill-block">
                 <h3 class="title">後端開發</h3>
                 <div class="skill-wrap">
@@ -40,7 +37,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Block 4 -->
             <div class="skill-block">
                 <h3 class="title">語言</h3>
                 <div class="skill-wrap">
