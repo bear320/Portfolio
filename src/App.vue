@@ -62,7 +62,9 @@
                 <router-link to="/projects">作品集</router-link>
                 <router-link to="/skills">技能</router-link>
             </div>
-            <router-view></router-view>
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
         </section>
     </main>
 
