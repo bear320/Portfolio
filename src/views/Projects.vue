@@ -26,7 +26,7 @@
                             <i class="ri-link"></i>
                         </a>
                         <a :href="project.github" target="_blank" class="project-link btn btn-small">
-                            <i class="ri-code-view"></i>
+                            <i class="ri-code-s-slash-line"></i>
                         </a>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
         </div>
     </section>
 </template>
-)
+
 <script>
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
@@ -74,9 +74,10 @@ export default {
         outImg(ID) {
             const show = document.getElementById(ID);
             show.src = this.temp;
+            this.temp = "";
         },
     },
-    created() {
+    mounted() {
         this.getProjects();
     },
 };
@@ -103,15 +104,13 @@ export default {
                 position: relative;
                 border-radius: 1rem;
                 overflow: hidden;
-                // border: 1px solid var(--text-color-light);
-                // border: 1px solid var(--text-color-lighten);
-
-                &:hover .mask {
-                    opacity: 0;
-                }
 
                 &:hover {
-                    border: 1px solid var(--text-color-lighten);
+                    outline: 0.75px solid var(--text-color-lighten);
+
+                    .mask {
+                        opacity: 0;
+                    }
                 }
 
                 .cover {
