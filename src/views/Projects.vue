@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "@/firebase";
 
 export default {
@@ -50,21 +50,22 @@ export default {
     computed: {},
     methods: {
         async getProjects() {
-            const querySnapshot = await getDocs(collection(db, "projects"));
-            let fbProjects = [];
-            querySnapshot.forEach((doc) => {
-                const project = {
-                    id: doc.id,
-                    tag: doc.data().tag,
-                    title: doc.data().title,
-                    cover: doc.data().cover,
-                    thumbnail: doc.data().thumbnail,
-                    link: doc.data().link,
-                    github: doc.data().github,
-                };
-                fbProjects.push(project);
+            onSnapshot(collection(db, "projects"), (querySnapshot) => {
+                const fbProjects = [];
+                querySnapshot.forEach((doc) => {
+                    const project = {
+                        id: doc.id,
+                        tag: doc.data().tag,
+                        title: doc.data().title,
+                        cover: doc.data().cover,
+                        thumbnail: doc.data().thumbnail,
+                        link: doc.data().link,
+                        github: doc.data().github,
+                    };
+                    fbProjects.push(project);
+                });
+                this.projects = fbProjects;
             });
-            this.projects = fbProjects;
         },
         inImg(ID) {
             const show = document.getElementById(ID);
