@@ -77,7 +77,7 @@ export default {
             this.temp = "";
         },
     },
-    mounted() {
+    created() {
         this.getProjects();
     },
 };
