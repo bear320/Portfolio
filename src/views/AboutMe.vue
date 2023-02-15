@@ -180,8 +180,12 @@ export default {
 
             .intro-wrap {
                 display: grid;
-                grid-template-columns: max-content;
+                grid-template-columns: 240px;
                 justify-content: center;
+
+                @include max(320) {
+                    grid-template-columns: 225px;
+                }
 
                 .intro-data {
                     display: flex;
