@@ -2,6 +2,7 @@
 node_modules
 /dist
 src/firebase/index.js
+.prettierignore
 
 
 # local env files
