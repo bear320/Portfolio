@@ -3,7 +3,7 @@
 ## Description
 * 使用 vue-cli 開發 (Vue 3)
 * 運用到的技術或套件：Cloud Firestore (Firebase), EmailJS, Remix Icon
-* [網站連結](https://superlative-crostata-f59f0a.netlify.app/)
+* [網站連結](https://oliver-xiong-portfolio.netlify.app/)
 
 ## Project setup
 
