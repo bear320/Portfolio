@@ -6,19 +6,19 @@ const routes = [
         path: "/",
         name: "about",
         component: () => import("@/views/AboutMe.vue"),
-        meta: { title: "簡介｜個人網站" },
+        meta: { title: "簡介｜熊伯祥的個人網站" },
     },
     {
         path: "/projects",
         name: "projects",
         component: () => import("@/views/Projects.vue"),
-        meta: { title: "作品集｜個人網站" },
+        meta: { title: "作品集｜熊伯祥的個人網站" },
     },
     {
         path: "/skills",
         name: "skills",
         component: () => import("@/views/Skills.vue"),
-        meta: { title: "技能｜個人網站" },
+        meta: { title: "技能｜熊伯祥的個人網站" },
     },
 ];
 
