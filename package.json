@@ -5,6 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
+        "deploy": "sudo firebase deploy",
         "安裝套件": "npm install"
     },
     "dependencies": {

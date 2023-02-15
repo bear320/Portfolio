@@ -2,8 +2,8 @@
 
 ## Description
 * 使用 vue-cli 開發 (Vue 3)
-* 運用到的技術或套件：Cloud Firestore (Firebase), EmailJS, Remix Icon
-* [網站連結](https://oliver-xiong-portfolio.netlify.app/)
+* 運用技術或套件：Cloud Firestore & Hosting (Firebase), EmailJS, Remix Icon
+* [網站連結](https://portfolio-b122f.web.app/)
 
 ## Project setup
 
