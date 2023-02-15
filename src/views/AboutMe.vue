@@ -42,78 +42,6 @@ export default {
     components: {},
     data() {
         return {
-            UIUX: [
-                {
-                    item: "UI/UX",
-                    level: "進階",
-                },
-                {
-                    item: "Wireframe",
-                    level: "進階",
-                },
-                {
-                    item: "Mockup",
-                    level: "進階",
-                },
-                {
-                    item: "Figma",
-                    level: "進階",
-                },
-                {
-                    item: "Photoshop",
-                    level: "入門",
-                },
-                {
-                    item: "Illustrator",
-                    level: "入門",
-                },
-                {
-                    item: "InDesign",
-                    level: "入門",
-                },
-            ],
-            Frontend: [
-                {
-                    item: "HTML5",
-                    level: "精熟",
-                },
-                {
-                    item: "CSS3",
-                    level: "精熟",
-                },
-                {
-                    item: "SASS",
-                    level: "進階",
-                },
-                {
-                    item: "JavaScript",
-                    level: "進階",
-                },
-                {
-                    item: "jQuery",
-                    level: "進階",
-                },
-                {
-                    item: "Vue JS",
-                    level: "進階",
-                },
-                {
-                    item: "Bootstrap",
-                    level: "進階",
-                },
-                {
-                    item: "AJAX",
-                    level: "進階",
-                },
-                {
-                    item: "Web APIs",
-                    level: "進階",
-                },
-                {
-                    item: "Git",
-                    level: "進階",
-                },
-            ],
             edu: [
                 {
                     title: "前端工程師專業技術養成班",
@@ -180,11 +108,11 @@ export default {
 
             .intro-wrap {
                 display: grid;
-                grid-template-columns: 240px;
+                grid-template-columns: 280px;
                 justify-content: center;
 
                 @include max(320) {
-                    grid-template-columns: 225px;
+                    grid-template-columns: 265px;
                 }
 
                 .intro-data {

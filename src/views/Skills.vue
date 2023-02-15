@@ -61,19 +61,19 @@ export default {
             UIUX: [
                 {
                     item: "UI/UX",
-                    level: "進階",
+                    level: "熟練",
                 },
                 {
                     item: "Wireframe",
-                    level: "進階",
+                    level: "熟練",
                 },
                 {
                     item: "Mockup",
-                    level: "進階",
+                    level: "熟練",
                 },
                 {
                     item: "Figma",
-                    level: "進階",
+                    level: "熟練",
                 },
                 {
                     item: "Photoshop",
@@ -91,43 +91,43 @@ export default {
             Frontend: [
                 {
                     item: "HTML5",
-                    level: "精熟",
+                    level: "熟練",
                 },
                 {
                     item: "CSS3",
-                    level: "精熟",
+                    level: "熟練",
                 },
                 {
                     item: "SASS",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "JavaScript",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "jQuery",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "Vue JS",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "Bootstrap",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "AJAX",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "Web APIs",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "Git",
-                    level: "進階",
+                    level: "中等",
                 },
             ],
             Backend: [
@@ -151,15 +151,15 @@ export default {
             Language: [
                 {
                     item: "中文",
-                    level: "精熟",
+                    level: "熟練",
                 },
                 {
                     item: "英文",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "德文",
-                    level: "進階",
+                    level: "中等",
                 },
                 {
                     item: "泰文",
