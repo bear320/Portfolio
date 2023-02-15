@@ -47,7 +47,7 @@
                     <a href="tel:+886-960779920" class="btn btn-small btn-gray">
                         <i class="ri-phone-line"></i>
                     </a>
-                    <a href="mailto:aaabear320@gmail.com?subject=測試" target="_blank" class="btn btn-small btn-gray">
+                    <a href="javascript:;" class="btn btn-small btn-gray" @click="showModal">
                         <i class="ri-mail-line"></i>
                     </a>
                 </div>
@@ -71,11 +71,19 @@
     <footer class="footer container">
         <span class="copy-right"> &#169; Oliver Xiong. All rights reserved. </span>
     </footer>
+
+    <ContactUs :style="{ display: showEmail ? 'flex' : 'none' }" @hide-modal="hideModal"></ContactUs>
 </template>
 
 <script>
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "@/firebase";
+import ContactUs from "@/components/ContactUs.vue";
+
 export default {
-    components: {},
+    components: {
+        ContactUs,
+    },
     data() {
         return {
             info: [
@@ -84,7 +92,7 @@ export default {
                     desc: "工作經驗",
                 },
                 {
-                    number: "2+",
+                    number: 0,
                     desc: "完成專案",
                 },
                 {
@@ -92,6 +100,7 @@ export default {
                     desc: "目前年紀",
                 },
             ],
+            showEmail: false,
         };
     },
     computed: {},
@@ -122,6 +131,22 @@ export default {
             localStorage.setItem("selected-theme", getCurrentTheme());
             localStorage.setItem("selected-icon", getCurrentIcon());
         },
+        async getProjectsLength() {
+            onSnapshot(collection(db, "projects"), (querySnapshot) => {
+                this.info[1].number = querySnapshot.docs.length;
+                console.log(querySnapshot.docs.length);
+                console.log(this.info[1].number);
+            });
+        },
+        showModal() {
+            this.showEmail = true;
+        },
+        hideModal({ val }) {
+            this.showEmail = val;
+        },
+    },
+    created() {
+        this.getProjectsLength();
     },
 };
 </script>
