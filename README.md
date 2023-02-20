@@ -2,7 +2,7 @@
 
 ## Description
 * 使用 vue-cli 開發 (Vue 3)
-* 運用技術或套件：EmailJS, Remix Icon, Cloud Firestore & Hosting (Firebase)
+* Tags: ```EmailJS```, ```Remix Icon```, ```Cloud Firestore (Firebase)```, ```Hosting (Firebase)``` 
 * [網站連結](https://portfolio-b122f.web.app/)
 
 ## Project setup
