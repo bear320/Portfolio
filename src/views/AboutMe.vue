@@ -45,7 +45,7 @@ export default {
             edu: [
                 {
                     title: "前端工程師專業技術養成班",
-                    desc: "緯育 TibaMe",
+                    desc: "緯育 TibaMe（前中壢資策會）",
                     time: "2022.08 ‒ 2023.01",
                 },
                 {

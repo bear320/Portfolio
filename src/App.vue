@@ -39,9 +39,13 @@
             </div>
 
             <div class="btn-wrap">
-                <a download="" href="@/assets/CV/OliverXiong_CV.pdf" class="btn">
-                    下載履歷
-                    <i class="ri-download-line"></i>
+                <a
+                    href="https://drive.google.com/file/d/1rlC4dUzS7jXXA0C0Ll0ZLtPQPUNzb5dN/view?usp=sharing"
+                    target="_blank"
+                    class="btn"
+                >
+                    查看履歷
+                    <i class="ri-external-link-line"></i>
                 </a>
                 <div class="small-btn-wrap">
                     <a href="tel:+886-960779920" class="btn btn-small btn-gray">

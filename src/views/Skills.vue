@@ -77,7 +77,7 @@ export default {
                 },
                 {
                     item: "Photoshop",
-                    level: "入門",
+                    level: "中等",
                 },
                 {
                     item: "Illustrator",
@@ -127,7 +127,7 @@ export default {
                 },
                 {
                     item: "Git",
-                    level: "中等",
+                    level: "熟練",
                 },
             ],
             Backend: [
@@ -137,7 +137,7 @@ export default {
                 },
                 {
                     item: "MySQL",
-                    level: "入門",
+                    level: "中等",
                 },
                 {
                     item: "RDB",
@@ -145,7 +145,7 @@ export default {
                 },
                 {
                     item: "Firebase",
-                    level: "入門",
+                    level: "中等",
                 },
             ],
             Language: [
