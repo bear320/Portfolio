@@ -5,6 +5,7 @@
                 <i class="ri-close-line"></i>
             </button>
 
+            <!-- submit.prevent 防止觸發表單默認提交 -->
             <form ref="form" @submit.prevent="sendEmail" class="form">
                 <h2>與我聯繫</h2>
                 <div class="input-item">
@@ -50,10 +51,6 @@
                         required
                     ></textarea>
                 </div>
-                <!-- <button class="submit" @click="sendEmail">
-                    寄送信件
-                    <i class="ri-send-plane-fill"></i>
-                </button> -->
                 <input type="submit" value="寄送信件" />
             </form>
         </div>
@@ -75,31 +72,29 @@ export default {
     },
     methods: {
         sendEmail() {
+            // 使用 checkValidity() 驗證表單，若表單無效則 return，反之則繼續進行下面代碼
             if (!this.$refs.form.checkValidity()) return;
 
-            // const payload = {
-            //     sender: this.sender,
-            //     email: this.email,
-            //     subject: this.subject,
-            //     msg: this.msg,
-            // };
-
+            // 使用 emailjs 的 sendForm() 發送表單
+            // 第一個參數： servece id
+            // 第二個參數： template id
+            // 第三個參數： payload（表單中的資料）
+            // 第四個參數： user id
             emailjs.sendForm("service_p0qrusn", "template_a6smoj9", this.$refs.form, "XnLeEJIsgc3v25oBw").then(
                 (result) => {
                     console.log("SUCCESS!", result.text);
+                    // 寄送成功：執行 this.hideModal()
                     this.hideModal();
-                    this.$refs.form.reset();
                 },
                 (error) => {
                     console.log("FAILED...", error.text);
                 }
             );
         },
-        // check() {
-        //     this.sendEmail();
-        // },
         hideModal() {
+            // 使用 $emit() 的方法，觸發名為 hide-modal 的自定義事件，並傳遞參數
             this.$emit("hide-modal", { val: false });
+            // 清空表單
             this.$refs.form.reset();
         },
     },

@@ -66,6 +66,7 @@
                 <router-link to="/projects">作品集</router-link>
                 <router-link to="/skills">技能</router-link>
             </div>
+            <!-- 減少呼叫 API / 切換 tab 保留元件狀態，而非重新渲染 -->
             <keep-alive>
                 <router-view></router-view>
             </keep-alive>
@@ -76,6 +77,7 @@
         <span class="copy-right"> &#169; Oliver Xiong. All rights reserved. </span>
     </footer>
 
+    <!-- 是否顯示綁定 showEmail 數值（預設為隱藏）/ 獲取子組件傳遞之數值 -->
     <ContactUs :style="{ display: showEmail ? 'flex' : 'none' }" @hide-modal="hideModal"></ContactUs>
 </template>
 
@@ -110,42 +112,50 @@ export default {
     computed: {},
     methods: {
         toggleTheme() {
+            // 獲得 id 為 theme-btn 的 DOM 元素（即切換主題之按鈕）
             const themeButton = document.getElementById("theme-btn");
 
-            // Get selected theme and icon in localstorage (if so)
+            // 透過 localstorage 獲取先前所儲存的主題和圖示（如果有的話）
             const selectedTheme = localStorage.getItem("selected-theme");
             const selectedIcon = localStorage.getItem("selected-icon");
 
-            // Get current theme and icon
+            // 獲取當前頁面主題的 function（如若 body 有 dark-theme 之 class 則為 dark，反之則為 light）
             const getCurrentTheme = () => (document.body.classList.contains("dark-theme") ? "dark" : "light");
+            // 獲取當前頁面圖示的 function（如若切換主題按鈕有 ri-sun-line 之 class 則為 ri-moon-line，反之則為 ri-sun-line）
             const getCurrentIcon = () =>
                 themeButton.classList.contains("ri-sun-line") ? "ri-moon-line" : "ri-sun-line";
 
-            // Check if the visitor previously chose a topic
+            // 根據之前保存之主題和圖示選項，判斷是否套用暗色主題和圖示
             if (selectedTheme) {
+                // 如若儲存主題為 dark，body 則新增 dark-theme 之 class，反之則移除 dark-theme 之 class
                 document.body.classList[selectedTheme === "dark" ? "add" : "remove"]("dark-theme");
+                // 如若儲存圖示為 ri-moon-line，切換主題按鈕則新增 ri-sun-line 之 class，反之則移除 ri-sun-line 之 class
                 themeButton.classList[selectedIcon === "ri-moon-line" ? "add" : "remove"]("ri-sun-line");
             }
 
-            // Toggle theme and icon
+            // 切換頁面的主題和圖示
             document.body.classList.toggle("dark-theme");
             themeButton.classList.toggle("ri-sun-line");
 
-            // Change theme and icon, then write into localstorage
+            // 將最新選項儲存至 localstorage
             localStorage.setItem("selected-theme", getCurrentTheme());
             localStorage.setItem("selected-icon", getCurrentIcon());
         },
         async getProjectsLength() {
+            // 使用 onSnapshot() 來偵聽 projects 的變化
+            // 第一個參數：要偵聽的集合
+            // 第二個參數：參數發生變化時執行之 callback function
             onSnapshot(collection(db, "projects"), (querySnapshot) => {
+                // 獲取 projects 中文檔的數量，並儲存至對應的 data 中
                 this.info[1].number = querySnapshot.docs.length;
-                console.log(querySnapshot.docs.length);
-                console.log(this.info[1].number);
             });
         },
         showModal() {
+            // 顯示寄信的 modal
             this.showEmail = true;
         },
         hideModal({ val }) {
+            // 獲取子物件傳遞之數值
             this.showEmail = val;
         },
     },
