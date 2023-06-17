@@ -1,6 +1,7 @@
 # Portfolio
 
 ## Description
+* 未來目標：用 Vite + Composition API 重構
 * 使用 vue-cli 開發 (Vue 3)
 * Tags: ```EmailJS```, ```Remix Icon```, ```Cloud Firestore (Firebase)```, ```Hosting (Firebase)``` 
 * [網站連結](https://portfolio-b122f.web.app/)
