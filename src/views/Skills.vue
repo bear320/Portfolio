@@ -79,10 +79,16 @@ export default {
       ],
       Frontend: [
         {
-          item: "HTML5",
+          item: "Git",
         },
         {
-          item: "CSS3, SASS",
+          item: "Github",
+        },
+        {
+          item: "HTML",
+        },
+        {
+          item: "CSS, SASS",
         },
         {
           item: "JavaScript",
@@ -109,11 +115,9 @@ export default {
           item: "Naive UI",
         },
         {
-          item: "Git",
+          item: "EmailJS",
         },
-        {
-          item: "Github",
-        },
+        { item: "VueQuill" },
       ],
       Backend: [
         {
