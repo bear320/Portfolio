@@ -63,21 +63,21 @@ export default {
         {
           title: "前端工程師 (Vue.js)",
           desc: "MiNDnodeAir 脈動心聯",
-          time: "2023.04 -",
+          time: "2023.04 - 現在",
         },
         {
-          title: "項目協調員＆德文翻譯",
+          title: "項目協調員 & 德文翻譯",
           desc: "ProLINK Translation",
           time: "2021.12 ‒ 2022.04",
         },
         {
           title: "秘書助理",
-          desc: "國立高雄科技大學應用德語系",
+          desc: "國立高雄科技大學 應用德語系",
           time: "2018.09 ‒ 2020.01",
         },
         {
           title: "實習生",
-          desc: "雲山水有熊的森林",
+          desc: "雲山水 有熊的森林",
           time: "2018.07 ‒ 2018.08",
         },
       ],

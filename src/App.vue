@@ -32,8 +32,8 @@
       </div>
 
       <div class="info-wrap grid">
-        <div class="info" v-for="item in info" :key="item.desc">
-          <h3 class="number">{{ item.number }}</h3>
+        <div class="info" v-for="(item, index) in info" :key="item.desc">
+          <h3 class="number">{{ item.number }}<span v-if="index === 1">+</span></h3>
           <p class="desc">{{ item.desc }}</p>
         </div>
       </div>
@@ -99,7 +99,7 @@ export default {
         },
         {
           number: 0,
-          desc: "個人專案",
+          desc: "完成專案",
         },
         {
           number: "25Y",
