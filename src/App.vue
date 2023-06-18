@@ -67,9 +67,6 @@
         <router-link to="/skills">技能</router-link>
       </div>
       <!-- 減少呼叫 API / 切換 tab 保留元件狀態，而非重新渲染 -->
-      <!-- <keep-alive>
-        <router-view></router-view>
-      </keep-alive> -->
       <router-view v-slot="{ Component }">
         <keep-alive>
           <component :is="Component" />
