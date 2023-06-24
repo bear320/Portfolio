@@ -1,10 +1,13 @@
 # Portfolio
 
 ## Description
-* 未來目標：用 Vite + Composition API 重構
-* 使用 vue-cli 開發 (Vue 3)
-* Tags: ```EmailJS```, ```Remix Icon```, ```Cloud Firestore (Firebase)```, ```Hosting (Firebase)``` 
-* [網站連結](https://portfolio-b122f.web.app/)
+* [New version](https://github.com/bear320/portfolio-v2) >>> Based on Vite + Vue3 Composition Api + TypeScript
+* Introduction: Personal Portfolio Website
+* Development: Vue-CLI + Vue3 Option Api
+* Libraries: EmailJS, Remix Icon, Firebase
+
+## Demo
+* [DEMO](https://portfolio-b122f.web.app/)
 
 ## Project setup
 
